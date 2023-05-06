@@ -807,6 +807,7 @@ class ExecuteCommands:
                 self.session.integration_controller.get_handlers_import_status()
             )
             handler_meta = handlers_meta[engine]
+            # import pdb; pdb.set_trace()
             if handler_meta.get("import", {}).get("success") is not True:
                 raise SqlApiException(f"Handler '{engine}' can not be used")
 
